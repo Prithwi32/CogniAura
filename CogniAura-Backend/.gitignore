@@ -1,0 +1,27 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Virtual environments
+venv/
+env/
+
+# Logs and database files
+*.log
+*.sqlite3
+*.db
+
+# IDE/Editor folders
+.vscode/
+.idea/
+
+# Dependencies (if you regenerate them)
+Pipfile.lock
+
+# Docker local
+*.pid
