@@ -1,18 +1,23 @@
+import { Link } from "react-router-dom";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#56E0E0]/10 via-white to-[#02607E]/10">
       {/* Navbar */}
       <nav className="flex justify-between items-center p-6 bg-white shadow-md">
         <div className="text-xl font-bold text-[#02607E] flex items-center gap-2">
-          <img src="/logo.png" alt="CogniAura" className="h-8" />
+          <img src="/hero-img.png" alt="CogniAura" className="h-8" />
           CogniAura
         </div>
         <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
-          <li>Resources</li>
-          <li>Assessment</li>
+          <Link to="/" className="hover:text-[#02607E]">Home</Link>
+          <li>
+            <a href="#about" className="hover:text-[#02607E]">About Us</a>
+          </li>
+          <Link to="/predictASD" className="hover:text-[#02607E]">Assessment</Link>
           <li>Activities</li>
-          <li>About Us</li>
-          <li>Home</li>
+          <li>
+            <a href="#resources" className="hover:text-[#02607E]">Resources</a>
+          </li>
         </ul>
       </nav>
 
@@ -28,7 +33,10 @@ export default function HomePage() {
             Welcome to CogniAura, your hub for autism support! Discover
             personalized resources, engaging games, and a caring community.
           </p>
-          <button className="mt-6 px-6 py-3 bg-[#02607E] text-white rounded-lg shadow-md hover:bg-[#024e6a]">
+          <button
+            className="mt-6 px-6 py-3 bg-[#02607E] text-white rounded-lg shadow-md hover:bg-[#024e6a]"
+            onClick={() => (window.location.href = "/predictASD")}
+          >
             Get Started
           </button>
         </div>
@@ -42,7 +50,7 @@ export default function HomePage() {
       </section>
 
       {/* About Us Section */}
-      <section className="bg-[#EAF6F6] p-10 text-center md:text-left">
+      <section id="about" className="bg-[#EAF6F6] p-10 text-center md:text-left">
         <h2 className="text-3xl font-bold text-[#02607E]">About Us</h2>
         <p className="mt-4 text-gray-600 max-w-2xl mx-auto md:mx-0">
           CogniAura was created to make a difference in the lives of those with
@@ -70,7 +78,7 @@ export default function HomePage() {
       </section>
 
       {/* Resources Section */}
-      <section className="p-10 text-center">
+      <section id="resources" className="p-10 text-center">
         <h2 className="text-3xl font-bold text-[#02607E]">Resources</h2>
         <p className="mt-2 text-gray-600">
           Explore our curated resources to support individuals with ASD and
